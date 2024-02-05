@@ -11,13 +11,39 @@ export default {
 </script>
 
 <template>
-    <div class="character-card">
-        <img :src="image" :alt="name" class="img-fluid">
-        <h3>{{ name }}</h3>
-        <div>{{ type }}</div>
-        <div>{{ serial }}</div>
-
+    <div class="character-card border border-success rounded border-5">
+        <div>
+            <img :src="image" :alt="name" class="img-fluid">
+        </div>
+        <div>
+            <h3>{{ name }}</h3>
+            <div>Type: {{ type }}</div>
+            <div>Serial number: {{ serial }}</div>
+        </div>
     </div>
 </template>
 
-<style></style>
+<style lang="scss" scoped>
+.character-card {
+    background-color: white;
+    height: 350px;
+    width: 300px;
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+
+
+
+    img {
+        width: 180px;
+
+    }
+
+
+
+
+
+}
+</style>

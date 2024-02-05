@@ -10,13 +10,17 @@ export default {
 
   created() {
     axios.get(endpoint).then(res => {
-      store.characters = res.data.results;
+      store.characters = res.data.docs;
+      console.log(res);
     })
   }
 }
 </script>
 
 <template>
+  <header class="container pt-5">
+    <h1>Pokémon cards</h1>
+  </header>
   <AppMain />
 </template>
 

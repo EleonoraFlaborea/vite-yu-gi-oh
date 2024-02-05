@@ -13,11 +13,17 @@ export default {
     <section>
         <div class="row g-3">
             <div class="col" v-for="character in store.characters" :key="character.id">
-                <PokemonCard :name="character.name" :image="character.imageUrl" />
+                <PokemonCard :name="character.name" :image="character.imageUrl" :serial="character.serial"
+                    :type="character.type1" />
             </div>
         </div>
 
     </section>
 </template>
 
-<style></style>
+<style lang="scss" scoped>
+col {
+    display: flex;
+    justify-content: center;
+}
+</style>
