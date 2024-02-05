@@ -1,6 +1,8 @@
 <script>
+import { store } from './data/store'
 export default {
   name: 'MyApp',
+  data: () => ({ store }),
   components: {
 
   }
