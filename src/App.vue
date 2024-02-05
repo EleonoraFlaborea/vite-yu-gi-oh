@@ -1,16 +1,23 @@
 <script>
-import { store } from './data/store'
+import axios from 'axios';
+import { store } from './data/store.js'
+const endpoint = 'https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons'
+
+import AppMain from './components/AppMain.vue';
 export default {
   name: 'MyApp',
-  data: () => ({ store }),
-  components: {
+  components: { AppMain },
 
+  created() {
+    axios.get(endpoint).then(res => {
+      store.characters = res.data.results;
+    })
   }
 }
 </script>
 
 <template>
-  <div class="text-success">ciao</div>
+  <AppMain />
 </template>
 
 <style lang="scss" scoped>
